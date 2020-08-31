@@ -49,6 +49,7 @@ Partial Class CalculatorForm
         Me.InputTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InputTextBox.Location = New System.Drawing.Point(16, 12)
         Me.InputTextBox.Name = "InputTextBox"
+        Me.InputTextBox.ReadOnly = True
         Me.InputTextBox.Size = New System.Drawing.Size(276, 32)
         Me.InputTextBox.TabIndex = 0
         '

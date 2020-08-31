@@ -1,7 +1,9 @@
-﻿Public Class CalculatorForm
+﻿Imports Microsoft.VisualBasic.CompilerServices
+
+Public Class CalculatorForm
 
     Private Sub CalculatorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        OutputListBox.Items.Insert(0, "Please Enter Your First Number")
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
@@ -85,4 +87,20 @@
         InputTextBox.AppendText("^")
     End Sub
 
+    Sub SolveValues()
+        Dim firstNumber As Integer
+        Dim secondNumber As Integer
+        Dim mathFunction As String
+
+        firstNumber = OutputListBox.Items.IndexOf(1)
+        mathFunction = OutputListBox.Items.IndexOf(3)
+        secondNumber = OutputListBox.Items.IndexOf(5)
+
+        OutputListBox.Items.Insert(6, CStr(firstNumber) & CStr(mathFunction) & CStr(secondNumber) & "=" & CStr(firstNumber & mathFunction & secondNumber))
+
+    End Sub
+
+    Private Sub InputTextBox_TextChanged(sender As Object, e As EventArgs) Handles InputTextBox.TextChanged
+
+    End Sub
 End Class
