@@ -62,7 +62,7 @@ Partial Class CalculatorForm
         Me.OneButton.Name = "OneButton"
         Me.OneButton.Size = New System.Drawing.Size(88, 58)
         Me.OneButton.TabIndex = 1
-        Me.OneButton.Text = "1"
+        Me.OneButton.Text = "&1"
         Me.OneButton.UseVisualStyleBackColor = True
         '
         'TwoButton
@@ -72,7 +72,7 @@ Partial Class CalculatorForm
         Me.TwoButton.Name = "TwoButton"
         Me.TwoButton.Size = New System.Drawing.Size(88, 58)
         Me.TwoButton.TabIndex = 2
-        Me.TwoButton.Text = "2"
+        Me.TwoButton.Text = "&2"
         Me.TwoButton.UseVisualStyleBackColor = True
         '
         'ThreeButton
@@ -82,7 +82,7 @@ Partial Class CalculatorForm
         Me.ThreeButton.Name = "ThreeButton"
         Me.ThreeButton.Size = New System.Drawing.Size(88, 58)
         Me.ThreeButton.TabIndex = 3
-        Me.ThreeButton.Text = "3"
+        Me.ThreeButton.Text = "&3"
         Me.ThreeButton.UseVisualStyleBackColor = True
         '
         'FourButton
@@ -92,7 +92,7 @@ Partial Class CalculatorForm
         Me.FourButton.Name = "FourButton"
         Me.FourButton.Size = New System.Drawing.Size(88, 58)
         Me.FourButton.TabIndex = 4
-        Me.FourButton.Text = "4"
+        Me.FourButton.Text = "&4"
         Me.FourButton.UseVisualStyleBackColor = True
         '
         'FiveButton
@@ -102,7 +102,7 @@ Partial Class CalculatorForm
         Me.FiveButton.Name = "FiveButton"
         Me.FiveButton.Size = New System.Drawing.Size(88, 58)
         Me.FiveButton.TabIndex = 5
-        Me.FiveButton.Text = "5"
+        Me.FiveButton.Text = "&5"
         Me.FiveButton.UseVisualStyleBackColor = True
         '
         'SixButton
@@ -112,7 +112,7 @@ Partial Class CalculatorForm
         Me.SixButton.Name = "SixButton"
         Me.SixButton.Size = New System.Drawing.Size(88, 58)
         Me.SixButton.TabIndex = 6
-        Me.SixButton.Text = "6"
+        Me.SixButton.Text = "&6"
         Me.SixButton.UseVisualStyleBackColor = True
         '
         'SevenButton
@@ -122,7 +122,7 @@ Partial Class CalculatorForm
         Me.SevenButton.Name = "SevenButton"
         Me.SevenButton.Size = New System.Drawing.Size(88, 58)
         Me.SevenButton.TabIndex = 7
-        Me.SevenButton.Text = "7"
+        Me.SevenButton.Text = "&7"
         Me.SevenButton.UseVisualStyleBackColor = True
         '
         'EightButton
@@ -132,7 +132,7 @@ Partial Class CalculatorForm
         Me.EightButton.Name = "EightButton"
         Me.EightButton.Size = New System.Drawing.Size(88, 58)
         Me.EightButton.TabIndex = 8
-        Me.EightButton.Text = "8"
+        Me.EightButton.Text = "&8"
         Me.EightButton.UseVisualStyleBackColor = True
         '
         'NineButton
@@ -142,7 +142,7 @@ Partial Class CalculatorForm
         Me.NineButton.Name = "NineButton"
         Me.NineButton.Size = New System.Drawing.Size(88, 58)
         Me.NineButton.TabIndex = 9
-        Me.NineButton.Text = "9"
+        Me.NineButton.Text = "&9"
         Me.NineButton.UseVisualStyleBackColor = True
         '
         'ZeroButton
@@ -152,7 +152,7 @@ Partial Class CalculatorForm
         Me.ZeroButton.Name = "ZeroButton"
         Me.ZeroButton.Size = New System.Drawing.Size(88, 58)
         Me.ZeroButton.TabIndex = 10
-        Me.ZeroButton.Text = "0"
+        Me.ZeroButton.Text = "&0"
         Me.ZeroButton.UseVisualStyleBackColor = True
         '
         'EnterButton
@@ -162,7 +162,7 @@ Partial Class CalculatorForm
         Me.EnterButton.Name = "EnterButton"
         Me.EnterButton.Size = New System.Drawing.Size(88, 58)
         Me.EnterButton.TabIndex = 11
-        Me.EnterButton.Text = "Enter"
+        Me.EnterButton.Text = "&Enter"
         Me.EnterButton.UseVisualStyleBackColor = True
         '
         'ClearButton
@@ -172,7 +172,7 @@ Partial Class CalculatorForm
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(88, 58)
         Me.ClearButton.TabIndex = 12
-        Me.ClearButton.Text = "Clear"
+        Me.ClearButton.Text = "&Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'AdditionButton
@@ -194,7 +194,7 @@ Partial Class CalculatorForm
         Me.MultiplicationButton.Name = "MultiplicationButton"
         Me.MultiplicationButton.Size = New System.Drawing.Size(88, 58)
         Me.MultiplicationButton.TabIndex = 14
-        Me.MultiplicationButton.Text = "*"
+        Me.MultiplicationButton.Text = "&*"
         Me.MultiplicationButton.UseVisualStyleBackColor = True
         '
         'SubtractButton
@@ -205,7 +205,7 @@ Partial Class CalculatorForm
         Me.SubtractButton.Name = "SubtractButton"
         Me.SubtractButton.Size = New System.Drawing.Size(88, 58)
         Me.SubtractButton.TabIndex = 13
-        Me.SubtractButton.Text = "-"
+        Me.SubtractButton.Text = "&-"
         Me.SubtractButton.UseVisualStyleBackColor = True
         '
         'DivisionButton
@@ -216,7 +216,7 @@ Partial Class CalculatorForm
         Me.DivisionButton.Name = "DivisionButton"
         Me.DivisionButton.Size = New System.Drawing.Size(88, 58)
         Me.DivisionButton.TabIndex = 18
-        Me.DivisionButton.Text = "/"
+        Me.DivisionButton.Text = "&/"
         Me.DivisionButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -226,7 +226,7 @@ Partial Class CalculatorForm
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(88, 58)
         Me.ExitButton.TabIndex = 17
-        Me.ExitButton.Text = "Exit"
+        Me.ExitButton.Text = "E&xit"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'ExponentButton
@@ -237,7 +237,7 @@ Partial Class CalculatorForm
         Me.ExponentButton.Name = "ExponentButton"
         Me.ExponentButton.Size = New System.Drawing.Size(88, 58)
         Me.ExponentButton.TabIndex = 16
-        Me.ExponentButton.Text = "^"
+        Me.ExponentButton.Text = "&^"
         Me.ExponentButton.UseVisualStyleBackColor = True
         '
         'OutputListBox
@@ -265,13 +265,15 @@ Partial Class CalculatorForm
         Me.DecimalButton.Name = "DecimalButton"
         Me.DecimalButton.Size = New System.Drawing.Size(88, 58)
         Me.DecimalButton.TabIndex = 21
-        Me.DecimalButton.Text = "."
+        Me.DecimalButton.Text = "&."
         Me.DecimalButton.UseVisualStyleBackColor = True
         '
         'CalculatorForm
         '
+        Me.AcceptButton = Me.EnterButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(602, 370)
         Me.Controls.Add(Me.DecimalButton)
         Me.Controls.Add(Me.NegativeButton)
