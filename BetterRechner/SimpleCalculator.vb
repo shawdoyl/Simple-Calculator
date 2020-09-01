@@ -9,7 +9,7 @@ Option Strict On
 Option Compare Text
 
 
-Module Module1
+Module SimpleCalculator
 
     Sub Main()
 
