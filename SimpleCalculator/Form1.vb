@@ -1,6 +1,7 @@
 ﻿Public Class CalculatorForm
     Private Sub CalculatorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OutputListBox.Items.Insert(0, "Please Enter Your First Number")
+        MathOperatorsGroupBox.Enabled = False
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Dim result As MsgBoxResult
