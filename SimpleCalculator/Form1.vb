@@ -1,4 +1,6 @@
-﻿Public Class CalculatorForm
+﻿Imports System.Drawing.Text
+
+Public Class CalculatorForm
     Private Sub CalculatorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OutputListBox.Items.Insert(0, "Please Enter Your First Number")
         MathOperatorsGroupBox.Enabled = False
@@ -11,14 +13,26 @@
         Else
         End If
     End Sub
-    Private Sub EnterButton_Click(sender As Object, e As EventArgs) Handles EnterButton.Click
 
-        OutputListBox.Items.Add(InputTextBox.Text)
-        InputTextBox.Clear()
+    Sub EnterValues(loopIteration As Integer)
+        For loopIteration = 0 To 3
+            OutputListBox.Items.Add(InputTextBox.Text)
+            InputTextBox.Clear()
+        Next
+    End Sub
 
+    Private Sub EnterButton_Click(sender As Object, e As EventArgs) Handles EnterButton.Click, EnterButton.Click
+
+
+
+        EnterValues(1)
+        OutputListBox.Items.Insert(2, "Please Enter Your Second Number.")
+        EnterValues(2)
+        OutputListBox.Items.Insert(4, "Please Enter Your Math Function.")
 
 
         'SolveValues()
+
 
     End Sub
     Sub SolveValues()
