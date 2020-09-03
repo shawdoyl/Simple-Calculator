@@ -24,7 +24,7 @@ Module SimpleCalculator
         Do While quitProgram = False
 
             Console.WriteLine("Please enter first number. Press Enter to proceed.")
-            Console.WriteLine("Press Q to to Exit at any time.")
+            Console.WriteLine("Press Q to Exit at any time.")
             Do While promptUser = True
                 Try
                     firstNumber = CInt(Console.ReadLine())
@@ -48,12 +48,13 @@ Module SimpleCalculator
             Loop
             promptUser = True
 
-            Console.WriteLine("Please enter desired function. Press Enter to finish calcultion.")
-            Console.WriteLine("1. product(*)")
-            Console.WriteLine("2. sum(+)")
-            Console.WriteLine("3. difference(-)")
-            Console.WriteLine("4. quotient(/)")
-            Console.WriteLine("5. exponent(^)")
+            'removed multiple console writes - TJR
+            Console.WriteLine("Please enter desired function. Press Enter to finish calculation." _
+            & vbNewLine & "1. product(*)" _
+            & vbNewLine & "2. sum(+)" _
+            & vbNewLine & "3. difference(-)" _
+            & vbNewLine & "4. quotient(/)" _
+            & vbNewLine & "5. exponent(^)")
             mathFunction = Console.ReadLine()
 
             If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" _
@@ -102,7 +103,7 @@ Module SimpleCalculator
                     Console.WriteLine("This is broken now.")
                 End Try
             Else
-                Console.WriteLine("That is not an appropiate Response.")
+                Console.WriteLine("That is not an appropriate Response.")
             End If
 
             Console.WriteLine("Press Enter to continue, enter Q then Enter to quit program.")
