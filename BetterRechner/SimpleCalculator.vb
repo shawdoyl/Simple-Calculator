@@ -8,7 +8,6 @@ Option Explicit On
 Option Strict On
 Option Compare Text
 
-
 Module SimpleCalculator
 
     Sub Main()
@@ -57,7 +56,8 @@ Module SimpleCalculator
             Console.WriteLine("5. exponent(^)")
             mathFunction = Console.ReadLine()
 
-            If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" Or mathFunction = "+" Or mathFunction = "2" Then
+            If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" _
+                Or mathFunction = "+" Or mathFunction = "2" Then
                 Try
                     Console.WriteLine(firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
                 Catch ex As InvalidCastException
@@ -65,7 +65,8 @@ Module SimpleCalculator
                 Catch ex As Exception
                     Console.WriteLine("This is broken now.")
                 End Try
-            ElseIf mathFunction = "*" Or mathFunction = "Multiply" Or mathFunction = "Multiplication" Or mathFunction = "Product" Or mathFunction = "Mult" Or mathFunction = "1" Then
+            ElseIf mathFunction = "*" Or mathFunction = "Multiply" Or mathFunction = "Multiplication" _
+                Or mathFunction = "Product" Or mathFunction = "Mult" Or mathFunction = "1" Then
                 Try
                     Console.WriteLine(firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
                 Catch ex As InvalidCastException
@@ -73,7 +74,8 @@ Module SimpleCalculator
                 Catch ex As Exception
                     Console.WriteLine("This is broken now.")
                 End Try
-            ElseIf mathFunction = "-" Or mathFunction = "Subtract" Or mathFunction = "Minus" Or mathFunction = "Difference" Or mathFunction = "Sub" Or mathFunction = "3" Then
+            ElseIf mathFunction = "-" Or mathFunction = "Subtract" Or mathFunction = "Minus" _
+                Or mathFunction = "Difference" Or mathFunction = "Sub" Or mathFunction = "3" Then
                 Try
                     Console.WriteLine(firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
                 Catch ex As InvalidCastException
@@ -81,7 +83,8 @@ Module SimpleCalculator
                 Catch ex As Exception
                     Console.WriteLine("This is broken now.")
                 End Try
-            ElseIf mathFunction = "Quotient" Or mathFunction = "/" Or mathFunction = "Divide" Or mathFunction = "Division" Or mathFunction = "Div" Or mathFunction = "4" Then
+            ElseIf mathFunction = "Quotient" Or mathFunction = "/" Or mathFunction = "Divide" _
+                Or mathFunction = "Division" Or mathFunction = "Div" Or mathFunction = "4" Then
                 Try
                     Console.WriteLine(firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
                 Catch ex As InvalidCastException
@@ -89,7 +92,8 @@ Module SimpleCalculator
                 Catch ex As Exception
                     Console.WriteLine("This is broken now.")
                 End Try
-            ElseIf mathFunction = "Exponent" Or mathFunction = "^" Or mathFunction = "To the Power of" Or mathFunction = "5" Then
+            ElseIf mathFunction = "Exponent" Or mathFunction = "^" Or mathFunction = "To the Power of" _
+                Or mathFunction = "5" Then
                 Try
                     Console.WriteLine(firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
                 Catch ex As InvalidCastException
