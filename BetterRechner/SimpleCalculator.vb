@@ -2,7 +2,7 @@
 'RCET0265
 'Fall_2020
 'Better_Calculator
-'https://github.com/shawdoyl/Simple-Calculator
+'https://github.com/shawdoyl/Simple-Calculator/.git
 
 Option Explicit On
 Option Strict On
@@ -17,6 +17,7 @@ Module SimpleCalculator
         Dim mathFunction As String
         Dim quitProgram As Boolean
         Dim promptUser As Boolean
+        Dim recalculate As Boolean = True
 
         promptUser = True
         quitProgram = False
@@ -48,44 +49,49 @@ Module SimpleCalculator
             Loop
             promptUser = True
 
-            'removed multiple console writes - TJR
-            Console.WriteLine("Please enter desired function. Press Enter to finish calculation." _
-            & vbNewLine & "1. product(*)" _
-            & vbNewLine & "2. sum(+)" _
-            & vbNewLine & "3. difference(-)" _
-            & vbNewLine & "4. quotient(/)" _
-            & vbNewLine & "5. exponent(^)")
+            Do
+                'removed multiple console writes - TJR
+                Console.WriteLine("Please enter desired function. Press Enter to finish calculation." _
+                                    & vbNewLine & "1. product(*)" _
+                                    & vbNewLine & "2. sum(+)" _
+                                    & vbNewLine & "3. difference(-)" _
+                                    & vbNewLine & "4. quotient(/)" _
+                                    & vbNewLine & "5. exponent(^)")
 
-            mathFunction = Console.ReadLine()
+                mathFunction = Console.ReadLine()
 
-            If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" _
+                If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" _
                 Or mathFunction = "+" Or mathFunction = "2" Then
 
-                Console.WriteLine(firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
+                    Console.WriteLine(firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
 
-            ElseIf mathFunction = "*" Or mathFunction = "Multiply" Or mathFunction = "Multiplication" _
+                ElseIf mathFunction = "*" Or mathFunction = "Multiply" Or mathFunction = "Multiplication" _
                 Or mathFunction = "Product" Or mathFunction = "Mult" Or mathFunction = "1" Then
 
-                Console.WriteLine(firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
+                    Console.WriteLine(firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
 
-            ElseIf mathFunction = "-" Or mathFunction = "Subtract" Or mathFunction = "Minus" _
+                ElseIf mathFunction = "-" Or mathFunction = "Subtract" Or mathFunction = "Minus" _
                 Or mathFunction = "Difference" Or mathFunction = "Sub" Or mathFunction = "3" Then
 
-                Console.WriteLine(firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
+                    Console.WriteLine(firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
 
-            ElseIf mathFunction = "Quotient" Or mathFunction = "/" Or mathFunction = "Divide" _
+                ElseIf mathFunction = "Quotient" Or mathFunction = "/" Or mathFunction = "Divide" _
                 Or mathFunction = "Division" Or mathFunction = "Div" Or mathFunction = "4" Then
 
-                Console.WriteLine(firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
+                    Console.WriteLine(firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
 
-            ElseIf mathFunction = "Exponent" Or mathFunction = "^" Or mathFunction = "To the Power of" _
+                ElseIf mathFunction = "Exponent" Or mathFunction = "^" Or mathFunction = "To the Power of" _
                 Or mathFunction = "5" Then
 
-                Console.WriteLine(firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
+                    Console.WriteLine(firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
 
-            Else
-                Console.WriteLine("That is not an appropriate Response.")
-            End If
+                ElseIf mathFunction = "" Then
+                    recalculate = False
+                Else
+                    Console.WriteLine("That is not an appropriate Response.")
+                End If
+
+            Loop While recalculate = True
 
             Console.WriteLine("Press Enter to continue, enter Q then Enter to quit program.")
 
@@ -96,10 +102,10 @@ Module SimpleCalculator
             End If
 
             Console.Clear()
-
+            recalculate = True
         Loop
 
-        Console.WriteLine("Have A Nice Day.")
+            Console.WriteLine("Have A Nice Day.")
         Console.ReadLine()
 
     End Sub
