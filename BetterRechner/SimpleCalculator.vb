@@ -55,53 +55,34 @@ Module SimpleCalculator
             & vbNewLine & "3. difference(-)" _
             & vbNewLine & "4. quotient(/)" _
             & vbNewLine & "5. exponent(^)")
+
             mathFunction = Console.ReadLine()
 
             If mathFunction = "Sum" Or mathFunction = "Addition" Or mathFunction = "Add" _
                 Or mathFunction = "+" Or mathFunction = "2" Then
-                Try
-                    Console.WriteLine(firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
-                Catch ex As InvalidCastException
-                    Console.WriteLine("Please Enter a Whole Number.")
-                Catch ex As Exception
-                    Console.WriteLine("This is broken now.")
-                End Try
+
+                Console.WriteLine(firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
+
             ElseIf mathFunction = "*" Or mathFunction = "Multiply" Or mathFunction = "Multiplication" _
                 Or mathFunction = "Product" Or mathFunction = "Mult" Or mathFunction = "1" Then
-                Try
-                    Console.WriteLine(firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
-                Catch ex As InvalidCastException
-                    Console.WriteLine("Please Enter a Whole Number.")
-                Catch ex As Exception
-                    Console.WriteLine("This is broken now.")
-                End Try
+
+                Console.WriteLine(firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
+
             ElseIf mathFunction = "-" Or mathFunction = "Subtract" Or mathFunction = "Minus" _
                 Or mathFunction = "Difference" Or mathFunction = "Sub" Or mathFunction = "3" Then
-                Try
-                    Console.WriteLine(firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
-                Catch ex As InvalidCastException
-                    Console.WriteLine("Please Enter a Whole Number.")
-                Catch ex As Exception
-                    Console.WriteLine("This is broken now.")
-                End Try
+
+                Console.WriteLine(firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
+
             ElseIf mathFunction = "Quotient" Or mathFunction = "/" Or mathFunction = "Divide" _
                 Or mathFunction = "Division" Or mathFunction = "Div" Or mathFunction = "4" Then
-                Try
-                    Console.WriteLine(firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
-                Catch ex As InvalidCastException
-                    Console.WriteLine("Please Enter a Whole Number.")
-                Catch ex As Exception
-                    Console.WriteLine("This is broken now.")
-                End Try
+
+                Console.WriteLine(firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
+
             ElseIf mathFunction = "Exponent" Or mathFunction = "^" Or mathFunction = "To the Power of" _
                 Or mathFunction = "5" Then
-                Try
-                    Console.WriteLine(firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
-                Catch ex As InvalidCastException
-                    Console.WriteLine("Please Enter a Whole Number.")
-                Catch ex As Exception
-                    Console.WriteLine("This is broken now.")
-                End Try
+
+                Console.WriteLine(firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
+
             Else
                 Console.WriteLine("That is not an appropriate Response.")
             End If
