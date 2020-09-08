@@ -1,6 +1,4 @@
-﻿Imports System.Drawing.Text
-
-Public Class CalculatorForm
+﻿Public Class CalculatorForm
     Private Sub CalculatorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OutputListBox.Items.Insert(0, "Please Enter Your First Number")
         MathOperatorsGroupBox.Enabled = False
@@ -13,52 +11,25 @@ Public Class CalculatorForm
         Else
         End If
     End Sub
-
-    Sub EnterValues(loopIteration As Integer)
-        For loopIteration = 0 To 3
-            OutputListBox.Items.Add(InputTextBox.Text)
-            InputTextBox.Clear()
-        Next
-    End Sub
-
-    Private Sub EnterButton_Click(sender As Object, e As EventArgs) Handles EnterButton.Click, EnterButton.Click
-
-
-
-        EnterValues(1)
-        OutputListBox.Items.Insert(2, "Please Enter Your Second Number.")
-        EnterValues(2)
-        OutputListBox.Items.Insert(4, "Please Enter Your Math Function.")
-
-
-        'SolveValues()
-
-
-    End Sub
     Sub SolveValues()
-
         Dim firstNumber As Double
         Dim secondNumber As Double
         Dim mathFunction As String
-
-        firstNumber = OutputListBox.Items.IndexOf(1)
-        mathFunction = OutputListBox.Items.IndexOf(3)
-        secondNumber = OutputListBox.Items.IndexOf(5)
-
+        firstNumber = CDbl(OutputListBox.Items.Item(1))
+        mathFunction = InputTextBox.Text
+        secondNumber = CDbl(OutputListBox.Items.Item(3))
         If mathFunction = "+" Then
-            OutputListBox.Items.Insert(6, firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
+            OutputListBox.Items.Insert(7, firstNumber & "+" & secondNumber & "=" & firstNumber + secondNumber)
         ElseIf mathFunction = "*" Then
-            OutputListBox.Items.Insert(6, firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
+            OutputListBox.Items.Insert(7, firstNumber & "*" & secondNumber & "=" & firstNumber * secondNumber)
         ElseIf mathFunction = "-" Then
-            OutputListBox.Items.Insert(6, firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
+            OutputListBox.Items.Insert(7, firstNumber & "-" & secondNumber & "=" & firstNumber - secondNumber)
         ElseIf mathFunction = "/" Then
-            OutputListBox.Items.Insert(6, firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
+            OutputListBox.Items.Insert(7, firstNumber & "/" & secondNumber & "=" & firstNumber / secondNumber)
         ElseIf mathFunction = "^" Then
-            OutputListBox.Items.Insert(6, firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
+            OutputListBox.Items.Insert(7, firstNumber & "^" & secondNumber & "=" & firstNumber ^ secondNumber)
         Else
-            Console.WriteLine("That is not an appropiate Response.")
         End If
-
     End Sub
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         InputTextBox.Clear()
@@ -113,5 +84,38 @@ Public Class CalculatorForm
     End Sub
     Private Sub DecimalButton_Click(sender As Object, e As EventArgs) Handles DecimalButton.Click
         InputTextBox.AppendText(".")
+    End Sub
+    Private Sub EnterFirstNumberButton_Click(sender As Object, e As EventArgs) Handles EnterFirstNumberButton.Click
+        OutputListBox.Items.Add(InputTextBox.Text)
+        InputTextBox.Clear()
+        OutputListBox.Items.Insert(2, "Please Enter Your Second Number")
+        EnterFirstNumberButton.Enabled = False
+        EnterSecondNumberButton.Enabled = True
+    End Sub
+    Private Sub EnterSecondNumberButton_Click(sender As Object, e As EventArgs) Handles EnterSecondNumberButton.Click
+        OutputListBox.Items.Add(InputTextBox.Text)
+        InputTextBox.Clear()
+        OutputListBox.Items.Insert(4, "Please Enter Your Math Function")
+        SolveButton.Enabled = True
+        EnterSecondNumberButton.Enabled = False
+        MathOperatorsGroupBox.Enabled = True
+        KeypadGroupBox.Enabled = False
+    End Sub
+    Private Sub SolveButton_Click(sender As Object, e As EventArgs) Handles SolveButton.Click
+        OutputListBox.Items.Add(InputTextBox.Text)
+        OutputListBox.Items.Insert(6, "You entered:")
+        SolveValues()
+        InputTextBox.Clear()
+        OutputListBox.Items.Insert(8, "Please click Reset to do another")
+        OutputListBox.Items.Insert(9, "calcalation, or press Exit to leave ")
+        OutputListBox.Items.Insert(10, "the program")
+    End Sub
+    Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
+        OutputListBox.Items.Clear()
+        OutputListBox.Items.Insert(0, "Please Enter Your First Number")
+        MathOperatorsGroupBox.Enabled = False
+        KeypadGroupBox.Enabled = True
+        SolveButton.Enabled = False
+        EnterFirstNumberButton.Enabled = True
     End Sub
 End Class

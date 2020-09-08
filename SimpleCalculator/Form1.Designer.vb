@@ -33,7 +33,7 @@ Partial Class CalculatorForm
         Me.EightButton = New System.Windows.Forms.Button()
         Me.NineButton = New System.Windows.Forms.Button()
         Me.ZeroButton = New System.Windows.Forms.Button()
-        Me.EnterButton = New System.Windows.Forms.Button()
+        Me.EnterFirstNumberButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.AdditionButton = New System.Windows.Forms.Button()
         Me.MultiplicationButton = New System.Windows.Forms.Button()
@@ -46,6 +46,9 @@ Partial Class CalculatorForm
         Me.DecimalButton = New System.Windows.Forms.Button()
         Me.KeypadGroupBox = New System.Windows.Forms.GroupBox()
         Me.MathOperatorsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.SolveButton = New System.Windows.Forms.Button()
+        Me.EnterSecondNumberButton = New System.Windows.Forms.Button()
+        Me.ResetButton = New System.Windows.Forms.Button()
         Me.KeypadGroupBox.SuspendLayout()
         Me.MathOperatorsGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -159,20 +162,20 @@ Partial Class CalculatorForm
         Me.ZeroButton.Text = "&0"
         Me.ZeroButton.UseVisualStyleBackColor = True
         '
-        'EnterButton
+        'EnterFirstNumberButton
         '
-        Me.EnterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EnterButton.Location = New System.Drawing.Point(197, 298)
-        Me.EnterButton.Name = "EnterButton"
-        Me.EnterButton.Size = New System.Drawing.Size(88, 58)
-        Me.EnterButton.TabIndex = 11
-        Me.EnterButton.Text = "&Enter"
-        Me.EnterButton.UseVisualStyleBackColor = True
+        Me.EnterFirstNumberButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnterFirstNumberButton.Location = New System.Drawing.Point(9, 298)
+        Me.EnterFirstNumberButton.Name = "EnterFirstNumberButton"
+        Me.EnterFirstNumberButton.Size = New System.Drawing.Size(88, 58)
+        Me.EnterFirstNumberButton.TabIndex = 11
+        Me.EnterFirstNumberButton.Text = "&Enter 1st #"
+        Me.EnterFirstNumberButton.UseVisualStyleBackColor = True
         '
         'ClearButton
         '
-        Me.ClearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClearButton.Location = New System.Drawing.Point(103, 298)
+        Me.ClearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClearButton.Location = New System.Drawing.Point(103, 362)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(88, 58)
         Me.ClearButton.TabIndex = 12
@@ -181,7 +184,6 @@ Partial Class CalculatorForm
         '
         'AdditionButton
         '
-        Me.AdditionButton.Enabled = False
         Me.AdditionButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdditionButton.Location = New System.Drawing.Point(0, 0)
         Me.AdditionButton.Name = "AdditionButton"
@@ -192,7 +194,6 @@ Partial Class CalculatorForm
         '
         'MultiplicationButton
         '
-        Me.MultiplicationButton.Enabled = False
         Me.MultiplicationButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MultiplicationButton.Location = New System.Drawing.Point(0, 122)
         Me.MultiplicationButton.Name = "MultiplicationButton"
@@ -203,7 +204,6 @@ Partial Class CalculatorForm
         '
         'SubtractButton
         '
-        Me.SubtractButton.Enabled = False
         Me.SubtractButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SubtractButton.Location = New System.Drawing.Point(0, 61)
         Me.SubtractButton.Name = "SubtractButton"
@@ -214,7 +214,6 @@ Partial Class CalculatorForm
         '
         'DivisionButton
         '
-        Me.DivisionButton.Enabled = False
         Me.DivisionButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DivisionButton.Location = New System.Drawing.Point(0, 183)
         Me.DivisionButton.Name = "DivisionButton"
@@ -226,8 +225,8 @@ Partial Class CalculatorForm
         'ExitButton
         '
         Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExitButton.Location = New System.Drawing.Point(9, 298)
+        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExitButton.Location = New System.Drawing.Point(9, 362)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(88, 58)
         Me.ExitButton.TabIndex = 17
@@ -236,7 +235,6 @@ Partial Class CalculatorForm
         '
         'ExponentButton
         '
-        Me.ExponentButton.Enabled = False
         Me.ExponentButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExponentButton.Location = New System.Drawing.Point(0, 244)
         Me.ExponentButton.Name = "ExponentButton"
@@ -306,19 +304,53 @@ Partial Class CalculatorForm
         Me.MathOperatorsGroupBox.TabIndex = 23
         Me.MathOperatorsGroupBox.TabStop = False
         '
+        'SolveButton
+        '
+        Me.SolveButton.Enabled = False
+        Me.SolveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SolveButton.Location = New System.Drawing.Point(197, 298)
+        Me.SolveButton.Name = "SolveButton"
+        Me.SolveButton.Size = New System.Drawing.Size(88, 58)
+        Me.SolveButton.TabIndex = 24
+        Me.SolveButton.Text = "&Solve"
+        Me.SolveButton.UseVisualStyleBackColor = True
+        '
+        'EnterSecondNumberButton
+        '
+        Me.EnterSecondNumberButton.Enabled = False
+        Me.EnterSecondNumberButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EnterSecondNumberButton.Location = New System.Drawing.Point(103, 298)
+        Me.EnterSecondNumberButton.Name = "EnterSecondNumberButton"
+        Me.EnterSecondNumberButton.Size = New System.Drawing.Size(88, 58)
+        Me.EnterSecondNumberButton.TabIndex = 25
+        Me.EnterSecondNumberButton.Text = "&Enter 2nd #"
+        Me.EnterSecondNumberButton.UseVisualStyleBackColor = True
+        '
+        'ResetButton
+        '
+        Me.ResetButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ResetButton.Location = New System.Drawing.Point(197, 362)
+        Me.ResetButton.Name = "ResetButton"
+        Me.ResetButton.Size = New System.Drawing.Size(88, 58)
+        Me.ResetButton.TabIndex = 26
+        Me.ResetButton.Text = "&Reset"
+        Me.ResetButton.UseVisualStyleBackColor = True
+        '
         'CalculatorForm
         '
-        Me.AcceptButton = Me.EnterButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ExitButton
-        Me.ClientSize = New System.Drawing.Size(592, 365)
+        Me.ClientSize = New System.Drawing.Size(592, 425)
+        Me.Controls.Add(Me.ResetButton)
+        Me.Controls.Add(Me.EnterSecondNumberButton)
+        Me.Controls.Add(Me.SolveButton)
         Me.Controls.Add(Me.MathOperatorsGroupBox)
         Me.Controls.Add(Me.KeypadGroupBox)
         Me.Controls.Add(Me.OutputListBox)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
-        Me.Controls.Add(Me.EnterButton)
+        Me.Controls.Add(Me.EnterFirstNumberButton)
         Me.Controls.Add(Me.InputTextBox)
         Me.Name = "CalculatorForm"
         Me.Text = "Calculator"
@@ -340,7 +372,7 @@ Partial Class CalculatorForm
     Friend WithEvents EightButton As Button
     Friend WithEvents NineButton As Button
     Friend WithEvents ZeroButton As Button
-    Friend WithEvents EnterButton As Button
+    Friend WithEvents EnterFirstNumberButton As Button
     Friend WithEvents ClearButton As Button
     Friend WithEvents AdditionButton As Button
     Friend WithEvents MultiplicationButton As Button
@@ -353,4 +385,7 @@ Partial Class CalculatorForm
     Friend WithEvents DecimalButton As Button
     Friend WithEvents KeypadGroupBox As GroupBox
     Friend WithEvents MathOperatorsGroupBox As GroupBox
+    Friend WithEvents SolveButton As Button
+    Friend WithEvents EnterSecondNumberButton As Button
+    Friend WithEvents ResetButton As Button
 End Class
